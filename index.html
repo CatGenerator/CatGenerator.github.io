@@ -5,15 +5,21 @@
         <meta name="viewport" content="width=device-width,
         initial-scale=1.0">
         <title>Generator</title>
+        <script>
+
+        </script>
         <style>
 
             body {
                 background-image: url('https://t4.ftcdn.net/jpg/02/18/59/71/360_F_218597156_D4Z3yellc3ZwppHZ4wGBeKRmEKjFgcUk.jpg');
             }
 
-            h1 {text-align: center;}
+            h1 {
+                text-align: center;
+            }
 
             .center {
+                text-align: center;
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
@@ -21,22 +27,37 @@
             }
 
             .showcase {
+                position: block;
+                text-align: center;
+                height: 10%;
                 margin-top: 20px;
-                max-width: 96%;
-                max-height: 96%;
-                margin: 2%;
+                margin-bottom: 20px;
             }
         </style>
     </head>
+
+    <script>
+
+        var password = prompt("What is the password?");
+        if (password!="LIMWV" && password!="limwv") {
+            window.location.href = "http://www.google.com";;
+        }
+
+    </script>
+
     <body class="jumbotron text-center" style="color:rgba(255, 183, 255, 1);" >
 
         <h1>Cat Pic Generator</h1>
+
+        <a class="center" href="catgenerator.github.io/favorites.html">Go to Favorites</a>
 
         <img src="/pog.gif" class="center"/><br />
 
         <button class="center btn btn-primary my-2 generate_btn">Generate</button>
     
-        <div class="center catsImgDiv"></div>
+        <div class="showcase catsImgDiv"></div>
+
+        <button class="center btn btn-primary my-2 favorite_btn">Favorite Image</button>
 
         <script src="/script.js"></script>
     </body>
