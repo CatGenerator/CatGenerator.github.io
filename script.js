@@ -2,23 +2,14 @@ const apiKey = 'live_S0NCm99UWosceZI3TTlRZXCyaeNy2xUE8YS7tonrpZHPf2QkScSXFmh7qPe
 const url = 'https://api.thecatapi.com/v1/images/search'
 var sub_id = ''
 var image_id = ''
-const passwords = ['LIMWV', 'limwv', 'tester']
+const passwords = ['LIMWV', 'limwv', 'tester', 'test']
 var i = 0;
 
 var password = prompt("What is the password?");
-        if (passwords.includes(password)) {
-            if(password == 'LIMWV' && password == 'limwv') {
-                sub_id = 'jess'
-            }
-            else if (password == 'tester') {
-                sub_id = 'test'
-            }
-        }
-        else {
-            while(!passwords.includes(password)) {
-                var password = prompt("Reenter password");
-            }
-        }
+while(!passwords.includes(password)) {
+    var password = prompt("Reenter password");
+}
+sub_id = password
 
 let generate_btn = document.querySelector(".generate_btn");
 
@@ -48,8 +39,8 @@ function fetchPics() {
 
         let catsImgEl = document.createElement("img")
         catsImgEl.setAttribute('src', `${catImgUrl}`)
-        catsImgEl.setAttribute('width', imgWidth)
-        catsImgEl.setAttribute('height', imgHeight)
+        catsImgEl.setAttribute('width', `${imgWidth}`)
+        catsImgEl.setAttribute('height', `${imgHeight}`)
         
         let catsImgDiv = document.querySelector(".catsImgDiv")
         catsImgDiv.appendChild(catsImgEl)
@@ -57,7 +48,6 @@ function fetchPics() {
     })
     .catch(err => console.log(err))
     i = 0;
-    console.log(i);
 }
 
 let favorite_btn = document.querySelector(".favorite_btn");
@@ -69,7 +59,7 @@ async function favorite() {
     if(i == 0) {
         var rawBody = JSON.stringify({
             "image_id": image_id,
-            "sub_id": sub_id
+           "sub_id": sub_id
              });
             
             
@@ -84,7 +74,6 @@ async function favorite() {
                 }
             )
         i = 1;
-        console.log(i);
     }
 
 }
