@@ -33,25 +33,13 @@ async function cycle() {
     if(i > favorites.length - 1) {
         i = 0;
     }
-    
-    // console.log(favourites[favourites.length-1].image.url);
-    // console.log(favourites[0])
+
+    var favImg = favorites[i].image.url
 
     let catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.innerHTML = ''
-        // var imgWidth = fav[i].naturalWidth
-        // var imgHeight = fav[i].naturalHeight
-        // var w = window.innerWidth
-        // var h = window.innerHeight
-        // while(imgWidth > w || imgHeight > h) {
-        //     imgWidth = imgWidth*0.5;
-        //     imgHeight = imgHeight*0.5;
-        // }
     let catsImgEl = document.createElement("img")
-    catsImgEl.setAttribute('src', `${favorites[i].image.url}`)
-    console.log(favorites[i].image.url)
-    // catsImgEl.setAttribute('width', imgWidth)
-    // catsImgEl.setAttribute('height', imgHeight)
+    catsImgEl.setAttribute('src', `${favImg}`)
         
     catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.appendChild(catsImgEl)
