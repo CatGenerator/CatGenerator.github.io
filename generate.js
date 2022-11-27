@@ -8,7 +8,7 @@ var i = 0;
 
 var password = prompt("What is the password?");
 while(!passwords.includes(password)) {
-    var password = prompt("Reenter password");
+    password = prompt("Reenter password");
 }
 sub_id = password
 
