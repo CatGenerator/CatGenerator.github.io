@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generator</title>
+        <style>
+
+            body {
+                background-image: url('https://t4.ftcdn.net/jpg/02/18/59/71/360_F_218597156_D4Z3yellc3ZwppHZ4wGBeKRmEKjFgcUk.jpg');
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .center {
+                text-align: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 20%
+            }
+
+            .showcase {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .btn-primary {
+                border-radius: 8px;
+                background-color: rgba(255, 183, 255, 1);
+                color: black;
+                padding: 10px;
+                width: 175px;
+                transition-duration: 0.4s;
+            }
+            
+            .btn-primary:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body class="jumbotron text-center" style="color:rgba(255, 183, 255, 1);" >
+
+        <h1>Cat Pic Favorites</h1>
+
+        <img src="/pog.gif" class="center"/><br />
+
+        <button class="center btn btn-primary my-2 cycleFavorite_btn">Cycle Your Favorites</button>
+
+        <div class="showcase catsFavDiv"></div>
+
+        <script type="module" src="/favorites.js"></script>
+    </body>
+</html>
