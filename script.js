@@ -60,7 +60,7 @@ async function favorite() {
     if(i == 0) {
         var rawBody = JSON.stringify({
             "image_id": image_id,
-            // "sub_id": sub_id
+            "sub_id": sub_id
              });
             
             
