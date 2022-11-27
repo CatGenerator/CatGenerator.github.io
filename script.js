@@ -1,8 +1,9 @@
 const apiKey = 'live_S0NCm99UWosceZI3TTlRZXCyaeNy2xUE8YS7tonrpZHPf2QkScSXFmh7qPe7xty9'
-const url = 'https://api.thecatapi.com/v1/images/search'
+const randUrl = 'https://api.thecatapi.com/v1/images/search'
+const favUrl = 'https://api.thecatapi.com/v1/favourites'
 var sub_id = ''
 var image_id = ''
-const passwords = ['LIMWV', 'limwv', 'tester', 'test']
+const passwords = ['limwv', 'tester', 'test']
 var i = 0;
 
 var password = prompt("What is the password?");
@@ -59,17 +60,17 @@ async function favorite() {
     if(i == 0) {
         var rawBody = JSON.stringify({
             "image_id": image_id,
-           "sub_id": sub_id
+            // "sub_id": sub_id
              });
             
             
             const newFavorite = await fetch(
-            "https://api.thecatapi.com/v1/favourites", 
+            favUrl, 
                 {
                     method: 'POST',
                     headers: { 
                         'x-api-key': apiKey,
-                        'content-type':"application/json"} ,
+                        'content-type': 'application/json'},
                     body: rawBody
                 }
             )
