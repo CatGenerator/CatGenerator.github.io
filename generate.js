@@ -1,5 +1,6 @@
 const apiKey = 'live_S0NCm99UWosceZI3TTlRZXCyaeNy2xUE8YS7tonrpZHPf2QkScSXFmh7qPe7xty9'
 const randUrl = 'https://api.thecatapi.com/v1/images/search'
+const favUrl = 'https://api.thecatapi.com/v1/favourites'
 var sub_id = ''
 var image_id = ''
 const passwords = ['limwv', 'tester', 'test']
