@@ -45,3 +45,22 @@ async function cycle() {
     catsFavDiv.appendChild(catsImgEl)
     i++
 }
+
+let unFavorite_btn = document.querySelector(".unFavorite_btn")
+
+unFavorite_btn.addEventListener("click", unFavorite)
+
+async function unFavorite() {
+
+    const favouriteId = favId
+    var requestOptions = {
+    method: 'DELETE',
+    headers:{
+        'x-api-key': apiKey,
+        'content-type': 'application/json'
+    }
+};
+
+await fetch(`https://api.thecatapi.com/v1/favourites/${favouriteId}`, requestOptions)
+
+}
