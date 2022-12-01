@@ -49,12 +49,12 @@ async function cycle() {
     var imgWidth = catsImgEl.naturalWidth
     var imgHeight = catsImgEl.naturalHeight
 
-    while(imgWidth > w || imgHeight > h) {
+//     while(imgWidth > w || imgHeight > h) {
 
-        imgWidth = imgWidth*0.5
-        imgHeight = imgHeight*0.5
+//         imgWidth = imgWidth*0.5
+//         imgHeight = imgHeight*0.5
 
-    }
+//     }
     
     catsImgEl.setAttribute('width', imgWidth)
     catsImgEl.setAttribute('height', imgHeight)
