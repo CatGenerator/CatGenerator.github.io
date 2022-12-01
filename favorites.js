@@ -21,26 +21,43 @@ cycleFavorite_btn.addEventListener("click", cycle);
 var i = 0;
 
 async function cycle() {
-    
-    const response = await fetch(favUrl, {
-        headers:{
-            "content-type": "application/json",
-            'x-api-key': apiKey
-        }
-    });
-    const favorites = await response.json();
 
-    if(i > favorites.length - 1) {
-        i = 0;
+    const response = await fetch(favUrl, {
+        headers: {
+            'x-api-key': apiKey,
+            'content-type': 'application/json'
+        }
+    })
+    const favorites = await response.json()
+
+    if (i > favorites.length - 1) {
+        i = 0
     }
 
-    var favImg = favorites[i].image.url
+    favImg = favorites[i].image.url
+    favId = favorites[i].id
 
     let catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.innerHTML = ''
+    
     let catsImgEl = document.createElement("img")
     catsImgEl.setAttribute('src', `${favImg}`)
-        
+
+    var w = window.innerWidth
+    var h = window.innerHeight
+    var imgWidth = catsImgEl.naturalWidth
+    var imgHeight = catsImgEl.naturalHeight
+
+    while(imgWidth >= w || imgHeight >= h) {
+
+        imgWidth = imgWidth*0.5
+        imgHeight = imgHeight*0.5
+
+    }
+    
+    catsImgEl.setAttribute('width', imgWidth)
+    catsImgEl.setAttribute('height', imgHeight)
+
     catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.appendChild(catsImgEl)
     i++
