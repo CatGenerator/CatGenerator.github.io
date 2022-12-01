@@ -7,7 +7,7 @@ var breedName = []
 var breedId = []
 var sub_id = ''
 var image_id = ''
-const passwords = ['limwv', 'tester', 'test', 'msb']
+const passwords = ['limwv', 'tester', 'test', 'msb', 'naodao']
 var i = 0
 var storedBreeds = []
 let option;
