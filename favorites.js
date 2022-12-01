@@ -3,7 +3,7 @@ var sub_id = ''
 const apiKey = 'live_S0NCm99UWosceZI3TTlRZXCyaeNy2xUE8YS7tonrpZHPf2QkScSXFmh7qPe7xty9';
 var favUrl = 'https://api.thecatapi.com/v1/favourites'
 const fav = []
-const passwords = ['limwv', 'tester', 'test', 'msb']
+const passwords = ['limwv', 'tester', 'test', 'msb', 'naodao']
 var i = 0;
 
 var password = prompt("What is the password?");
