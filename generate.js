@@ -8,7 +8,6 @@ var breedId = []
 var sub_id = ''
 var image_id = ''
 const passwords = ['limwv', 'tester', 'test', 'msb', 'naodao']
-var i = 0
 var storedBreeds = []
 let option;
 
@@ -52,8 +51,7 @@ fetch(breedUrl, {
 
 function randOrBreed() {
 
-    if (document.getElementById('breed_selector').value == 'All') 
-    {
+    if (document.getElementById('breed_selector').value == 'All') {
         return randUrl
     }
     return `${randUrl}${querySP}${breedId[document.getElementById('breed_selector').value]}`
@@ -83,7 +81,7 @@ function fetchPics() {
             var imgHeight = data[0].height
             var w = window.innerWidth
             var h = window.innerHeight
-            while (imgWidth > w || imgHeight > h) {
+            while (imgWidth >= w || imgHeight >= h) {
                 imgWidth = imgWidth * 0.5
                 imgHeight = imgHeight * 0.5
             }
@@ -98,7 +96,6 @@ function fetchPics() {
 
         })
         .catch(err => console.log(err))
-    i = 0
 }
 
 let favorite_btn = document.querySelector(".favorite_btn")
@@ -107,7 +104,6 @@ favorite_btn.addEventListener("click", favorite)
 
 async function favorite() {
 
-    if (i == 0) {
         var rawBody = JSON.stringify({
             "image_id": image_id,
             "sub_id": sub_id
@@ -124,7 +120,5 @@ async function favorite() {
                 body: rawBody
             }
         )
-        i = 1
-    }
 
 }
