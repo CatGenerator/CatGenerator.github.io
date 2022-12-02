@@ -56,8 +56,8 @@ async function cycle() {
 
 //     }
     
-    catsImgEl.setAttribute('width', imgWidth)
-    catsImgEl.setAttribute('height', imgHeight)
+//     catsImgEl.setAttribute('width', imgWidth)
+//     catsImgEl.setAttribute('height', imgHeight)
 
     catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.appendChild(catsImgEl)
