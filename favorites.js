@@ -1,5 +1,5 @@
 const querySP = '?sub_id='
-var sub_id = 'test'
+var sub_id = ''
 const apiKey = 'live_S0NCm99UWosceZI3TTlRZXCyaeNy2xUE8YS7tonrpZHPf2QkScSXFmh7qPe7xty9'
 var favUrl = 'https://api.thecatapi.com/v1/favourites'
 const fav = []
