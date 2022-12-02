@@ -17,6 +17,15 @@ sub_id = password
 
 favUrl = `${favUrl}${querySP}${sub_id}`
 
+function getMeta(url) {
+    return new Promise((resolve, reject) => {
+        let img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject();
+        img.src = url;
+    });
+}
+
 let cycleFavorite_btn = document.querySelector(".cycleFavorite_btn")
 
 cycleFavorite_btn.addEventListener("click", cycle)
@@ -42,22 +51,25 @@ async function cycle() {
     catsFavDiv.innerHTML = ''
     
     let catsImgEl = document.createElement("img")
-    catsImgEl.setAttribute('src', `${favImg}`)
 
     var w = window.innerWidth
     var h = window.innerHeight
-    var imgWidth = catsImgEl.naturalWidth
-    var imgHeight = catsImgEl.naturalHeight
 
-//     while(imgWidth > w || imgHeight > h) {
+    let img = await getMeta(favImg);
 
-//         imgWidth = imgWidth*0.5
-//         imgHeight = imgHeight*0.5
+    let imgWidth = img.width;
+    let imgHeight = img.height;
 
-//     }
+    while(imgWidth > w || imgHeight > h) {
+
+        imgWidth = imgWidth/2
+        imgHeight = imgHeight/2
+
+    }
     
-//     catsImgEl.setAttribute('width', imgWidth)
-//     catsImgEl.setAttribute('height', imgHeight)
+    catsImgEl.setAttribute('src', `${favImg}`)
+    catsImgEl.setAttribute('width', imgWidth)
+    catsImgEl.setAttribute('height', imgHeight)
 
     catsFavDiv = document.querySelector(".catsFavDiv")
     catsFavDiv.appendChild(catsImgEl)
