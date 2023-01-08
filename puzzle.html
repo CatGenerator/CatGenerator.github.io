@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Jessica</title>
+    <h1>Epic Puzzle Time</h1>
+    <script src="puzzle.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: rgb(253, 104, 253);
+            background-image: url("/background.jpg");
+        }
+
+        #board {
+            /* width: 500px;
+            height: 500px; */
+            border: 2px solid purple;
+
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #board img {
+            width: 50px;
+            height: 50px;
+            /* border: 0.5px solid lightblue; */
+        }
+
+        #pieces {
+            width: 1000px;
+            height: 250px;
+            border: 2px solid purple;
+
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+        }
+
+        #pieces img {
+            width: 50px;
+            height: 50px;
+            /* border: 0.5px solid lightblue; */
+        }
+
+        .btn-primary {
+            border-radius: 8px;
+            background-color: rgba(255, 183, 255, 1);
+            color: black;
+            padding: 10px;
+            width: 125px;
+            transition-duration: 0.4s;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .center {
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 15%
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h2>Turns: <span id="turns">0</span></h2>
+    <!-- <button class="center btn btn-primary my-2 next_btn">Next?</button> -->
+    <div id="pieces"></div>
+    <div id="board"></div>
+    <canvas id="mycanvas"></canvas>
+</body>
+
+</html>
